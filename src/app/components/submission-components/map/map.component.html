@@ -1,0 +1,17 @@
+<div class="row d-flex">
+  <div class="col-lg-3">
+    <div *ngFor="let submission of submissionsList; let i = index">
+      <app-content-card
+        [submission]="submission"
+        *ngIf="i < 4"
+      ></app-content-card>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div *ngIf="apiLoaded | async">
+      <google-map [center]="center" height="600px" width="100%">
+        <map-marker [position]="marker.position"> </map-marker
+      ></google-map>
+    </div>
+  </div>
+</div>

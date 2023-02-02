@@ -1,0 +1,46 @@
+@import "../../../variables.scss";
+
+section {
+  background-color: $blue;
+}
+
+header {
+  justify-content: space-between;
+  align-items: center;
+  width: 96%;
+  background-color: $blue;
+  color: #fff !important;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 32px;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .routes {
+    height: 64px;
+    align-items: center;
+    gap: 0.5rem;
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      margin: 0;
+      height: 64px;
+      padding: 0 1rem;
+      cursor: pointer;
+
+      &.active {
+        background-color: #1773bb;
+      }
+    }
+  }
+  .buttons {
+    height: 64px;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+}

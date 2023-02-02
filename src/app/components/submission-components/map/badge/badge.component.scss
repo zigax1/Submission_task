@@ -1,0 +1,32 @@
+@import "../../../../../variables.scss";
+
+.status {
+  padding: 2px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: fit-content;
+  &.red {
+    border: 1px solid $red;
+    background-color: #f5c3b3;
+    p {
+      color: $red;
+      margin: 0;
+    }
+  }
+  &.green {
+    border: 1px solid $green;
+    background-color: #d7e5da;
+    p {
+      color: $green;
+      margin: 0;
+    }
+  }
+  &.grey {
+    border: 1px solid $grey;
+    background-color: #ececed;
+    p {
+      color: $grey;
+      margin: 0;
+    }
+  }
+}

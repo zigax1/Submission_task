@@ -1,0 +1,114 @@
+@import "../../../variables.scss";
+
+.submission {
+  h1 {
+    font-size: 32px;
+    margin: 2rem 0;
+  }
+
+  .inputs {
+    .left {
+      display: flex;
+      gap: 40px;
+    }
+    .right {
+      display: flex;
+      gap: 30px;
+      justify-content: flex-end;
+      .toggle {
+        p {
+          margin: 0;
+        }
+        .map,
+        .list {
+          padding: 6px 20px;
+          cursor: pointer;
+
+          &.active {
+            color: #ffff;
+            border-radius: 4px;
+            background-color: $blue;
+          }
+
+          &.non-active {
+            color: #060c1b;
+            border: 2px solid $grey;
+            border-radius: 4px;
+          }
+        }
+        .map {
+          border-top-right-radius: 0 !important;
+          border-bottom-right-radius: 0 !important;
+        }
+        .list {
+          border-top-left-radius: 0 !important;
+          border-bottom-left-radius: 0 !important;
+        }
+      }
+
+      .export {
+        color: $blue;
+        cursor: pointer;
+        border: none;
+        background-color: #ffff;
+      }
+    }
+  }
+}
+
+mdb-form-control {
+  position: relative;
+  height: 36px;
+
+  input {
+    padding-left: 35px;
+  }
+
+  .custom-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* label {
+      display: flex;
+      align-items: center;
+      padding-top: 12px !important;
+    } */
+  i {
+    &.fa-times {
+      position: absolute;
+      //right: 15px;
+      left: 10px;
+
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 20px;
+    }
+    &.fa-search {
+      position: absolute;
+      //right: 15px;
+      left: 10px;
+
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 16px;
+    }
+  }
+}
+
+.dropdown {
+  .btn-primary {
+    color: #060c1b;
+    border: 1px solid $grey;
+    background: #ffff;
+    box-shadow: none;
+    width: 200px;
+  }
+  a::after {
+    color: $grey;
+    margin-left: 50px;
+  }
+}

@@ -1,0 +1,83 @@
+<div class="submission">
+  <h1>Submissions</h1>
+  <div class="inputs row mb-4">
+    <div class="left col-lg-8">
+      <mdb-form-control>
+        <input
+          mdbInput
+          type="text"
+          id="search"
+          [(ngModel)]="search"
+          (ngModelChange)="onChange()"
+          placeholder="Search..."
+          class="form-control"
+        /><i class="fas fa-search fa-lg custom-icon" *ngIf="!showIcon"></i>
+        <i class="fa fa-times" (click)="onClickIcon()" *ngIf="showIcon"></i>
+      </mdb-form-control>
+      <div mdbDropdown class="dropdown">
+        <a
+          class="btn btn-primary dropdown-toggle"
+          role="button"
+          id="dropdownMenuLink"
+          mdbDropdownToggle
+          aria-expanded="false"
+        >
+          Select Form
+        </a>
+        <ul
+          mdbDropdownMenu
+          class="dropdown-menu"
+          aria-labelledby="dropdownMenuLink"
+        >
+          <li><a class="dropdown-item" href="#">Form 1</a></li>
+          <li><a class="dropdown-item" href="#">Form 2</a></li>
+        </ul>
+      </div>
+      <div mdbDropdown class="dropdown">
+        <a
+          class="btn btn-primary dropdown-toggle"
+          role="button"
+          id="dropdownMenuLink"
+          mdbDropdownToggle
+          aria-expanded="false"
+        >
+          Select Status
+        </a>
+        <ul
+          mdbDropdownMenu
+          class="dropdown-menu"
+          aria-labelledby="dropdownMenuLink"
+        >
+          <li><a class="dropdown-item" href="#">Low Risk</a></li>
+          <li><a class="dropdown-item" href="#">Uncomplete</a></li>
+          <li><a class="dropdown-item" href="#">Unassigned</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="right col-lg-4">
+      <div class="toggle d-flex">
+        <p
+          class="map"
+          (click)="clickMap()"
+          [ngClass]="showMap ? 'active' : 'non-active'"
+        >
+          Map
+        </p>
+        <p
+          class="list"
+          (click)="clickList()"
+          [ngClass]="showList ? 'active' : 'non-active'"
+        >
+          List
+        </p>
+      </div>
+      <button class="export" (click)="clickExport()">
+        <i class="fas fa-file-download me-1"></i>Export
+      </button>
+    </div>
+  </div>
+  <div class="content">
+    <div *ngIf="showList"><app-list (export)="clickExport()"></app-list></div>
+    <div *ngIf="showMap"><app-map></app-map></div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="mm-paginator" id="mm-p-main">
+  <ng-container>
+    <!-- the button for previous page is always active -->
+    <a (click)="changePage(activePage - 1)" class="active" id="mm-p-prev">{{
+      prevText
+    }}</a>
+    <ng-container *ngFor="let page of pagesAsObjects">
+      <ng-container *ngIf="page.displayValue">
+        <a
+          class="{{ page.displayIndex === activePage ? 'active' : 'none' }}"
+          (click)="changePage(page.displayIndex)"
+          id="{{ 'mm-p-' + page.displayIndex }}"
+          >{{ page.displayIndex }}</a
+        >
+      </ng-container>
+      <ng-container *ngIf="page.displayValue === false" id="mm-p-empty">
+        <a class="empty">...</a>
+      </ng-container>
+    </ng-container>
+    <a (click)="changePage(activePage + 1)" class="active" id="mm-p-next">{{
+      nextText
+    }}</a>
+  </ng-container>
+</div>

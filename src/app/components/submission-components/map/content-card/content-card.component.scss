@@ -1,0 +1,32 @@
+@import "../../../../../variables.scss";
+
+.card {
+  border: 1px solid $grey;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 8px;
+  box-shadow: none;
+
+  .upper-content {
+    display: flex;
+    justify-content: space-between;
+    p {
+      color: $black;
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: 600;
+    }
+  }
+  p {
+    font-size: 14px;
+    color: $black;
+    margin-bottom: 8px;
+    span {
+      color: $grey;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
